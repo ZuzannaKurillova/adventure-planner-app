@@ -9,7 +9,7 @@ export class GeminiService {
   private _generativeAI: GoogleGenerativeAI;
 
   constructor() {
-    this._generativeAI = new GoogleGenerativeAI('AIzaSyBMaUuIfSZBiO8taLaFss5miYLEy1PozqU');
+    this._generativeAI = new GoogleGenerativeAI('');
   }
 
   async generateText(prompt: string): Promise<Activity[]>{
