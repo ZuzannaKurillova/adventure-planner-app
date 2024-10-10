@@ -14,6 +14,6 @@ export class ImageSearchService {
       this._http.get<any>(url),
     );
 
-    return images.hits[0].largeImageURL;
+    return images.hits.length > 0 ? images.hits[0].webformatURL : null;
   }
 }
