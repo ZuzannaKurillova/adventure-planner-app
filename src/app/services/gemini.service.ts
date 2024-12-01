@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Activity } from '../models/activity';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class GeminiService {
   private _generativeAI: GoogleGenerativeAI;
 
   constructor() {
-    this._generativeAI = new GoogleGenerativeAI('');
+    this._generativeAI = new GoogleGenerativeAI(environment.geminiApiKey);
   }
 
   async generateText(prompt: string): Promise<Activity[]>{
